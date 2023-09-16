@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/bootstrap.min.css' %}">
+    <title>Formulario</title>
+</head>
+<body>
+ 
+    
+  <nav class="navbar navbar-expand-lg bg-body-tertiary rounded" aria-label="Eleventh navbar example">
+     <img src="{% static '/Capitan_SanLuis.jpeg' %}" class="rounded float-end" alt="FUM" width="50" height="50">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Secretaria</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample09">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Principal</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contactos</a>
+            </li>            
+          </ul>
+         
+        </div>
+      </div>
+    </nav>
+    <div class="container py-4">
+      
+  
+    {% block body %}
+    {% endblock %}
+    </div>
+
+
+
+
+    
+    <script src="{% static '/bootstrap.min.js' %}"></script>
+</body>
+  <footer class="bg-light text-center text-lg-start">
+  <div class="container p-4">
+    <ul class="list-unstyled">
+      <li>
+        <a href="#" class="text-muted text-decoration-none">Intranet MININT</a>
+      </li>
+      <li>
+        <a href="#" class="text-muted text-decoration-none">Servicio Nacional de Descargas</a>
+      </li>
+      <li>
+        <a href="#" class="text-muted text-decoration-none">Portal DTS</a>
+      </li>
+    </ul>
+    <p>Información de la empresa</p>
+  </div>
+</footer>
+</html>

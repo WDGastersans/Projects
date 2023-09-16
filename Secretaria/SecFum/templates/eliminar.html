@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <h1>Eliminar</h1>
+  <p>¿Está seguro de que desea eliminar este dato?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a href="{% url 'formulario' %}" class="btn btn-secondary">Cancelar</a>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,97 @@
+ {% extends "./base.html" %}
+ 
+ 
+ {% block body %}
+ <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+        <h2>Gestion de expedientes</h2>
+        <div class="card py-2">
+            <div class="card-body py-2">
+                <div class="container">
+                <form  method="POST">
+                    {% csrf_token %} 
+                    {{ form.as_p }}
+                     <button type="submit" class="btn btn-success">Guardar</button>
+                    
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+     <div class="col-sm-12 col-md-6 col-lg-8 col-xl-8">
+        <h1>Expediente de estudiantes</h1>
+        <div class="table-responsive py-2">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>CI</th>
+                    <th>Filiar</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Apellido2</th>
+                    <th>Militancia</th>
+                    <th>Cargo</th>
+                    <th>Grado</th>
+                    <th>Carrera</th>
+                    <th>Masculino</th>
+                    <th>Femenino</th>
+                    <th>Tez Negra</th>
+                    <th>Tez Blanca</th>
+                    <th>Tez Mestiza</th>
+                    <th>Dirección</th>
+                    <th>Municipio</th>
+                    <th>Provincia</th>
+                    <th>Unidad</th>
+                    <th>Teléfono</th>
+                    <th>Teléfono Móvil</th>
+                    <th>Fecha</th>
+                    <th>Matrícula</th>
+                    <th>Rematrícula</th>
+                    <th>Baja</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+                <tbody>
+                {% for dato in datos %}
+                    <tr>
+                        <td>{{ dato.idalumo }}</td>
+                        <td>{{ dato.ci }}</td>
+                        <td>{{ dato.filiar }}</td>
+                        <td>{{ dato.nombre }}</td>
+                        <td>{{ dato.apellido }}</td>
+                        <td>{{ dato.apellido2 }}</td>
+                        <td>{{ dato.militancia }}</td>
+                        <td>{{ dato.cargo }}</td>
+                        <td>{{ dato.grado }}</td>
+                        <td>{{ dato.carrera }}</td>
+                        <td>{{ dato.masculino }}</td>
+                        <td>{{ dato.femenino }}</td>
+                        <td>{{ dato.teznegro }}</td>
+                        <td>{{ dato.tezblanco }}</td>
+                        <td>{{ dato.tezmestizo }}</td>
+                        <td>{{ dato.direccion }}</td>
+                        <td>{{ dato.municipio }}</td>
+                        <td>{{ dato.provincia }}</td>
+                        <td>{{ dato.unidad }}</td>
+                        <td>{{ dato.telefono }}</td>
+                        <td>{{ dato.telefono_movil }}</td>
+                        <td>{{ dato.fecha }}</td>
+                        <td>{{ dato.matricula }}</td>
+                        <td>{{ dato.rematricula }}</td>
+                        <td>{{ dato.baja }}</td>
+                        <td>
+                            <a href="{% url 'editar' dato.idalumo %}" class="btn btn-warning">Editar</a>
+                            <a href="{% url 'eliminar' dato.idalumo %}" class="btn btn-danger">Eliminar</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            </table>
+        </div>
+        
+    </div>
+ </div>
+
+ {% endblock %}
+ 
