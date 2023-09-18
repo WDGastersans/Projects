@@ -24,7 +24,7 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th>ID</th>
+                    
                     <th>CI</th>
                     <th>Filiar</th>
                     <th>Nombre</th>
@@ -49,13 +49,13 @@
                     <th>Matrícula</th>
                     <th>Rematrícula</th>
                     <th>Baja</th>
-                    <th>Acciones</th>
+                    
                 </tr>
             </thead>
                 <tbody>
                 {% for dato in datos %}
                     <tr>
-                        <td>{{ dato.idalumo }}</td>
+                        
                         <td>{{ dato.ci }}</td>
                         <td>{{ dato.filiar }}</td>
                         <td>{{ dato.nombre }}</td>
@@ -65,11 +65,11 @@
                         <td>{{ dato.cargo }}</td>
                         <td>{{ dato.grado }}</td>
                         <td>{{ dato.carrera }}</td>
-                        <td>{{ dato.masculino }}</td>
-                        <td>{{ dato.femenino }}</td>
-                        <td>{{ dato.teznegro }}</td>
-                        <td>{{ dato.tezblanco }}</td>
-                        <td>{{ dato.tezmestizo }}</td>
+                        <td>{% if dato.masculino %} Si {% else %}  {% endif %}</td>
+                        <td>{% if dato.femenino %} Si {% else %}  {% endif %}</td>
+                        <td>{% if dato.teznegro %} Si {% else %}  {% endif %}</td>
+                        <td>{% if dato.tezblanco %} Si {% else %}  {% endif %}</td>
+                        <td>{% if dato.mestizo %} Si {% else %}  {% endif %}</td>
                         <td>{{ dato.direccion }}</td>
                         <td>{{ dato.municipio }}</td>
                         <td>{{ dato.provincia }}</td>
@@ -77,9 +77,9 @@
                         <td>{{ dato.telefono }}</td>
                         <td>{{ dato.telefono_movil }}</td>
                         <td>{{ dato.fecha }}</td>
-                        <td>{{ dato.matricula }}</td>
-                        <td>{{ dato.rematricula }}</td>
-                        <td>{{ dato.baja }}</td>
+                        <td>{% if dato.matricula %} Si {% else %}   {% endif %}</td>                       
+                        <td>{% if dato.rematricula %} Si {% else %}  {% endif %}</td>
+                        <td>{% if dato.baja %} Si {% else %}  {% endif %}</td>
                         <td>
                             <a href="{% url 'editar' dato.idalumo %}" class="btn btn-warning">Editar</a>
                             <a href="{% url 'eliminar' dato.idalumo %}" class="btn btn-danger">Eliminar</a>
